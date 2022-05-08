@@ -1,1 +1,6 @@
-# huitamericain
+# Huitamericain
+
+## How to build
+cd build
+cmake ..
+
