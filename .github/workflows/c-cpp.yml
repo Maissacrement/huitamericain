@@ -13,11 +13,20 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: Install cppcheck
+      run: apt install cppcheck -y
     - name: Go in build directory
       run: mkdir -p build;
-    - name: Run cmake and build
+    - name: Run cmake
       working-directory: ./build
-      run: cmake .. && cmake --build .;
+      run: time cmake ..;
+    - name: Run cmake build
+      working-directory: ./build
+      run: time cmake --build .;
     - name: Print Main
       working-directory: ./build
-      run: ./Huitamericain
+      run: ./Huitamericain;
+    - name: Cpp check code
+      run: time cppcheck src;
+    - name: Cpp check build
+      run: time cppcheck --cppcheck-build-dir=./build src;
