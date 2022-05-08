@@ -14,11 +14,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Go in build directory
-      run: mkdir -p build && cd build
+      run: mkdir -p build && cd build;
     - name: Run cmake
-      run: cmake ..
+      run: cmake ..;
     - name: Run build
-      run: cmake --build .
+      run: cmake --build .;
     - name: Print Main
       run: ./Huitamericain
     - name: make check
