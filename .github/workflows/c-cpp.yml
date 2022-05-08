@@ -1,0 +1,27 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Go in build directory
+      run: cd build
+    - name: Run cmake
+      run: cmake ..
+    - name: Run build
+      run: cmake --build .
+    - name: Print Main
+      run: ./Huitamericain
+    - name: make check
+      run: make check
+    - name: make distcheck
+      run: make distcheck
