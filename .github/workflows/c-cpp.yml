@@ -16,10 +16,8 @@ jobs:
     - name: Go in build directory
       run: mkdir -p build;
     - name: Run cmake and build
-      run: ls && cd build && cmake .. && cmake --build .;
+      working-directory: ./build
+      run: cmake .. && cmake --build .;
     - name: Print Main
+      working-directory: ./build
       run: ./Huitamericain
-    - name: make check
-      run: make check
-    - name: make distcheck
-      run: make distcheck
