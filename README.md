@@ -1,7 +1,8 @@
 # Huitamericain
 
 ## How to build
-```toml
+```bash
+mkdir -p build
 cd build
 cmake ..
 cmake --build .
