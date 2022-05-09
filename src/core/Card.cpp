@@ -18,6 +18,8 @@ class Card
         // famille 52 carte
         static const char* familly[];
         Bank cardWhoHaveBeenAlreadydistibute[_LIMIT] {Bank {0,"hello"}};
+
+        int** returnRandomeIntArray();
     public:
         void setBankArrayOfProvidedCard();
         bool haveBeenDistributed();
@@ -28,6 +30,10 @@ class Card
 const int Card::dataset[] = {1,2,3,4,5,6,7,8,9,10,11,12,13};
 const char* Card::familly[] = {"pique","trefle","coeur","carreau"};
 
+int** Card::returnRandomeIntArray()
+{
+
+}
 
 void Card::setBankArrayOfProvidedCard()
 {
