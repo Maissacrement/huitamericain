@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdlib.h>
 
 struct Bank
 {
@@ -19,7 +20,7 @@ class Card
         static const char* familly[];
         Bank cardWhoHaveBeenAlreadydistibute[_LIMIT] {Bank {0,"hello"}};
 
-        int** returnRandomeIntArray();
+        int *returnRandomIntArray(int start, int end);
     public:
         void setBankArrayOfProvidedCard();
         bool haveBeenDistributed();
@@ -30,9 +31,14 @@ class Card
 const int Card::dataset[] = {1,2,3,4,5,6,7,8,9,10,11,12,13};
 const char* Card::familly[] = {"pique","trefle","coeur","carreau"};
 
-int** Card::returnRandomeIntArray()
+int *Card::returnRandomIntArray(int start, int end)
 {
-
+    int a = rand() % end + start;
+    int b = rand() % end + start;
+    std::cout << a << " " << b << std::endl;
+    
+    static int res[] = {a, b};
+    return res;
 }
 
 void Card::setBankArrayOfProvidedCard()
@@ -53,9 +59,7 @@ int *Card::Distribute ()
 
 Card::Card(/* args */)
 {
-    //int res = *this->Distribute();
-    //int test[] = {5,3};
-    //int *ptr = test;
+    std::cout << this->returnRandomIntArray(5,16)[0] << std::endl;
     this->setBankArrayOfProvidedCard();
     int* res = this->Distribute();
     std::cout << res[1] << std::endl;
