@@ -25,7 +25,7 @@ jobs:
       run: time cmake --build .;
     - name: Print Main
       working-directory: ./build
-      run: ./Huitamericain;
+      run: echo -e "Distribue\n" && ./Huitamericain;
     - name: Cpp check code
       run: time cppcheck --enable=all --std=c++11 src;
     - name: Cpp check build

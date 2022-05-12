@@ -9,6 +9,7 @@ class game
 
 game::game(/* args */)
 {
+    
 }
 
 game::~game()
