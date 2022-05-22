@@ -30,3 +30,6 @@ jobs:
       run: time cppcheck --enable=all --std=c++11 src;
     - name: Cpp check build
       run: time cppcheck --enable=all --std=c++11 --cppcheck-build-dir=./build src;
+    - name: Run app
+      working-directory: ./build
+      run: ./Huitamericain

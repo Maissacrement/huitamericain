@@ -1,7 +1,10 @@
 #include <iostream>
+#include "core/Card.cpp"
 
 int main (void)
 {
-    std::cout << "hello";
+    Card *card = new Card();
+
+    delete card;
     return 0;
 }
